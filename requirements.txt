@@ -1,0 +1,11 @@
+torch
+transformers
+sentencepiece
+scikit-learn
+funasr
+modelscope
+soundfile
+opensmile
+fastapi
+uvicorn
+python-multipart

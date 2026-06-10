@@ -1,0 +1,1334 @@
+{
+  "audio_id": "220228",
+  "audio_cte_score": "2",
+  "audio_cte_rationale": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊",
+  "tiers": {
+    "内容情感反映": [
+      {
+        "tier_id": "内容情感反映",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a127",
+        "ref": "",
+        "start_ms": 0,
+        "end_ms": 3156917,
+        "value": ""
+      }
+    ],
+    "促进探索": [
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a59",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "0"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a60",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "1"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a61",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "0"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a62",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "0"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a63",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1160583,
+        "value": "0"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a64",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "0"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a65",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "0"
+      },
+      {
+        "tier_id": "促进探索",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a66",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "0"
+      }
+    ],
+    "接纳确认": [
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a67",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a68",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a69",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a70",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a71",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1160583,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a72",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a73",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "0"
+      },
+      {
+        "tier_id": "接纳确认",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a74",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "0"
+      }
+    ],
+    "共情阻碍": [
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a75",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "0"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a76",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "1"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a77",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "0"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a78",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "1"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a79",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1160583,
+        "value": "0"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a80",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "1"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a81",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "0"
+      },
+      {
+        "tier_id": "共情阻碍",
+        "participant": "咨询师",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a82",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "1"
+      }
+    ],
+    "单元CTE分数": [
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a83",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "3"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a84",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "1"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a85",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "2"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a86",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "1"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a87",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1160583,
+        "value": "4"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a88",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "1"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a89",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "2"
+      },
+      {
+        "tier_id": "单元CTE分数",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a90",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "1"
+      }
+    ],
+    "共情标签依据": [
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a91",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "情感反映：很累"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a92",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "你可以但说无妨、淡化感受、转移话题"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a93",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "内容反映：精力太少了"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a94",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "转移话题"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a95",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1160583,
+        "value": "情感反映：被爱，被需要"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a96",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "评价指责、淡化感受"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a97",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "情感反映：很累"
+      },
+      {
+        "tier_id": "共情标签依据",
+        "participant": "",
+        "linguistic_type": "共情标签",
+        "annotation_id": "a98",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "淡化感受、转移话题"
+      }
+    ],
+    "单元CTE分数依据": [
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a99",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "能反映来访者表层明显的内容和情绪"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a100",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "回应与来访者当下体验无关"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a101",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "回应只抓住了部分内容，也可能把情绪理解错"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a102",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "回应与来访者当下体验无关"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a103",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1160583,
+        "value": "4"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a104",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "回应与来访者当下体验无关"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a105",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "回应只抓住了部分内容，也可能把情绪理解错"
+      },
+      {
+        "tier_id": "单元CTE分数依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a106",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "回应与来访者当下体验无关"
+      }
+    ],
+    "来访文本": [
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a29",
+        "ref": "",
+        "start_ms": 20625,
+        "end_ms": 23375,
+        "value": "最近总是感觉很累"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a30",
+        "ref": "",
+        "start_ms": 524375,
+        "end_ms": 529125,
+        "value": "这也就是我痛苦的根源。因为你这种女生太多了。"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a31",
+        "ref": "",
+        "start_ms": 914750,
+        "end_ms": 928167,
+        "value": "这样吧，这个需求是两方面的，对吧？一个是当你那个有感觉的时候，这是一种需求，对吧？还有一种就是我觉得我的精力有点少了"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a32",
+        "ref": "",
+        "start_ms": 928250,
+        "end_ms": 930125,
+        "value": ""
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a33",
+        "ref": "",
+        "start_ms": 930583,
+        "end_ms": 940917,
+        "value": "一方面是解决那种冲动，一方面就是我感觉那是一种生活，要体验的生活"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a107",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1157417,
+        "value": "我怎么形容呢，反正有个人能抱在怀里还是蛮开心的"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a108",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1786667,
+        "value": "反正我现在有点累"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a109",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2788333,
+        "value": "好累我操，真的有点累"
+      },
+      {
+        "tier_id": "来访文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a110",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2795917,
+        "value": "不是跟你谈话很累，跟你谈话挺好的，但是它仍然拯救不了我的身躯"
+      }
+    ],
+    "咨询师文本": [
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a34",
+        "ref": "",
+        "start_ms": 23375,
+        "end_ms": 35000,
+        "value": "很累。我看你在那个给我的那个里面好像什么都勾了，我看两性什么恋爱人迹，哈哈哈，所有东西对，你最近是感觉不太好吗？还是"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a35",
+        "ref": "",
+        "start_ms": 529125,
+        "end_ms": 535000,
+        "value": "我这种女生，我这种什么样的女生？你可以但说无妨，我们没有"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a36",
+        "ref": "",
+        "start_ms": 928250,
+        "end_ms": 930125,
+        "value": "你的精力太少了"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a37",
+        "ref": "",
+        "start_ms": 940917,
+        "end_ms": 946250,
+        "value": "你觉得生活只有那种体验方式吗"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a111",
+        "ref": "",
+        "start_ms": 1157417,
+        "end_ms": 1160583,
+        "value": "被爱，被需要"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a112",
+        "ref": "",
+        "start_ms": 1786750,
+        "end_ms": 1791250,
+        "value": "为啥会累呢？你可别跟我说是因为找不了对象"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a113",
+        "ref": "",
+        "start_ms": 2788333,
+        "end_ms": 2789750,
+        "value": "跟我谈话很累"
+      },
+      {
+        "tier_id": "咨询师文本",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a114",
+        "ref": "",
+        "start_ms": 2795916,
+        "end_ms": 2820249,
+        "value": "心理咨询它本来就，你要知道它的局限性，它只是一个跟你敞开心扉，然后让你知道你自己是怎么想的一个过程，最后解决问题的肯定是你。也就是所有的心理咨询，包括我，都是一个尽可能帮你去找到适合你方法的一个过程。解决问题这个有点，可能你对我们的"
+      }
+    ],
+    "CTE总评分": [
+      {
+        "tier_id": "CTE总评分",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a128",
+        "ref": "",
+        "start_ms": 0,
+        "end_ms": 3156917,
+        "value": "2"
+      }
+    ],
+    "来访者表达区间": [
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a38",
+        "ref": "",
+        "start_ms": 20750,
+        "end_ms": 23375,
+        "value": "00：20-00：22"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a39",
+        "ref": "",
+        "start_ms": 524375,
+        "end_ms": 529125,
+        "value": "08：45-08：48"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a40",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 928250,
+        "value": "15：15-15：27"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a41",
+        "ref": "",
+        "start_ms": 928250,
+        "end_ms": 930125,
+        "value": ""
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a42",
+        "ref": "",
+        "start_ms": 930583,
+        "end_ms": 940917,
+        "value": "15：32-15：40"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a115",
+        "ref": "",
+        "start_ms": 1150917,
+        "end_ms": 1157417,
+        "value": "19：11-19：17"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a116",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1786667,
+        "value": "29：45-29：46"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a117",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2788333,
+        "value": "46：26-46：28"
+      },
+      {
+        "tier_id": "来访者表达区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a118",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2795917,
+        "value": "46：30-46：35"
+      }
+    ],
+    "咨询师回应区间": [
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a43",
+        "ref": "",
+        "start_ms": 23500,
+        "end_ms": 35000,
+        "value": "00：23-00：35"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a44",
+        "ref": "",
+        "start_ms": 529125,
+        "end_ms": 535000,
+        "value": "08：49-08：54"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a45",
+        "ref": "",
+        "start_ms": 928250,
+        "end_ms": 930125,
+        "value": "15：29-15：30"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a46",
+        "ref": "",
+        "start_ms": 940917,
+        "end_ms": 946250,
+        "value": "15：43-15：46"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a119",
+        "ref": "",
+        "start_ms": 1157417,
+        "end_ms": 1160583,
+        "value": "19：18-19：19"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a120",
+        "ref": "",
+        "start_ms": 1786750,
+        "end_ms": 1791250,
+        "value": "29：47-29：50"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a121",
+        "ref": "",
+        "start_ms": 2788333,
+        "end_ms": 2789750,
+        "value": "46：28-46：29"
+      },
+      {
+        "tier_id": "咨询师回应区间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a122",
+        "ref": "",
+        "start_ms": 2795916,
+        "end_ms": 2820249,
+        "value": "46：35-46：59"
+      }
+    ],
+    "CTE总评分依据": [
+      {
+        "tier_id": "CTE总评分依据",
+        "participant": "",
+        "linguistic_type": "CTE分数",
+        "annotation_id": "a129",
+        "ref": "",
+        "start_ms": 0,
+        "end_ms": 3156917,
+        "value": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      }
+    ],
+    "共情单元起止时间": [
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a47",
+        "ref": "",
+        "start_ms": 20875,
+        "end_ms": 35000,
+        "value": "00：20-00：35"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a48",
+        "ref": "",
+        "start_ms": 524500,
+        "end_ms": 535250,
+        "value": "08：45-08：54"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a49",
+        "ref": "",
+        "start_ms": 914625,
+        "end_ms": 930250,
+        "value": "15：15-15：30"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a50",
+        "ref": "",
+        "start_ms": 930417,
+        "end_ms": 946333,
+        "value": "15：32-15：46"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a123",
+        "ref": "",
+        "start_ms": 1150832,
+        "end_ms": 1160499,
+        "value": "19：11-19：19"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a124",
+        "ref": "",
+        "start_ms": 1785083,
+        "end_ms": 1791250,
+        "value": "29：45-29：50"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a125",
+        "ref": "",
+        "start_ms": 2786500,
+        "end_ms": 2789833,
+        "value": "46：26-46：29"
+      },
+      {
+        "tier_id": "共情单元起止时间",
+        "participant": "",
+        "linguistic_type": "时间和说话人",
+        "annotation_id": "a126",
+        "ref": "",
+        "start_ms": 2789917,
+        "end_ms": 2820333,
+        "value": "46：30-46：59"
+      }
+    ]
+  },
+  "client_turns": [
+    {
+      "turn_index": 1,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a29",
+      "start_ms": 20625,
+      "end_ms": 23375,
+      "text": "最近总是感觉很累"
+    },
+    {
+      "turn_index": 2,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a30",
+      "start_ms": 524375,
+      "end_ms": 529125,
+      "text": "这也就是我痛苦的根源。因为你这种女生太多了。"
+    },
+    {
+      "turn_index": 3,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a31",
+      "start_ms": 914750,
+      "end_ms": 928167,
+      "text": "这样吧，这个需求是两方面的，对吧？一个是当你那个有感觉的时候，这是一种需求，对吧？还有一种就是我觉得我的精力有点少了"
+    },
+    {
+      "turn_index": 4,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a32",
+      "start_ms": 928250,
+      "end_ms": 930125,
+      "text": ""
+    },
+    {
+      "turn_index": 5,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a33",
+      "start_ms": 930583,
+      "end_ms": 940917,
+      "text": "一方面是解决那种冲动，一方面就是我感觉那是一种生活，要体验的生活"
+    },
+    {
+      "turn_index": 6,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a107",
+      "start_ms": 1150917,
+      "end_ms": 1157417,
+      "text": "我怎么形容呢，反正有个人能抱在怀里还是蛮开心的"
+    },
+    {
+      "turn_index": 7,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a108",
+      "start_ms": 1785083,
+      "end_ms": 1786667,
+      "text": "反正我现在有点累"
+    },
+    {
+      "turn_index": 8,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a109",
+      "start_ms": 2786500,
+      "end_ms": 2788333,
+      "text": "好累我操，真的有点累"
+    },
+    {
+      "turn_index": 9,
+      "role": "client",
+      "tier_id": "来访文本",
+      "annotation_id": "a110",
+      "start_ms": 2789917,
+      "end_ms": 2795917,
+      "text": "不是跟你谈话很累，跟你谈话挺好的，但是它仍然拯救不了我的身躯"
+    }
+  ],
+  "therapist_turns": [
+    {
+      "turn_index": 1,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a34",
+      "start_ms": 23375,
+      "end_ms": 35000,
+      "text": "很累。我看你在那个给我的那个里面好像什么都勾了，我看两性什么恋爱人迹，哈哈哈，所有东西对，你最近是感觉不太好吗？还是"
+    },
+    {
+      "turn_index": 2,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a35",
+      "start_ms": 529125,
+      "end_ms": 535000,
+      "text": "我这种女生，我这种什么样的女生？你可以但说无妨，我们没有"
+    },
+    {
+      "turn_index": 3,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a36",
+      "start_ms": 928250,
+      "end_ms": 930125,
+      "text": "你的精力太少了"
+    },
+    {
+      "turn_index": 4,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a37",
+      "start_ms": 940917,
+      "end_ms": 946250,
+      "text": "你觉得生活只有那种体验方式吗"
+    },
+    {
+      "turn_index": 5,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a111",
+      "start_ms": 1157417,
+      "end_ms": 1160583,
+      "text": "被爱，被需要"
+    },
+    {
+      "turn_index": 6,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a112",
+      "start_ms": 1786750,
+      "end_ms": 1791250,
+      "text": "为啥会累呢？你可别跟我说是因为找不了对象"
+    },
+    {
+      "turn_index": 7,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a113",
+      "start_ms": 2788333,
+      "end_ms": 2789750,
+      "text": "跟我谈话很累"
+    },
+    {
+      "turn_index": 8,
+      "role": "therapist",
+      "tier_id": "咨询师文本",
+      "annotation_id": "a114",
+      "start_ms": 2795916,
+      "end_ms": 2820249,
+      "text": "心理咨询它本来就，你要知道它的局限性，它只是一个跟你敞开心扉，然后让你知道你自己是怎么想的一个过程，最后解决问题的肯定是你。也就是所有的心理咨询，包括我，都是一个尽可能帮你去找到适合你方法的一个过程。解决问题这个有点，可能你对我们的"
+    }
+  ],
+  "segments": [
+    {
+      "annotation_id": "a47",
+      "segment_id": "a47",
+      "start_ms": 20875,
+      "end_ms": 35000,
+      "client_text": "最近总是感觉很累",
+      "therapist_text": "很累。我看你在那个给我的那个里面好像什么都勾了，我看两性什么恋爱人迹，哈哈哈，所有东西对，你最近是感觉不太好吗？还是",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "0",
+        "单元CTE分数": "3",
+        "共情标签依据": "情感反映：很累",
+        "单元CTE分数依据": "能反映来访者表层明显的内容和情绪",
+        "CTE总评分": "2",
+        "来访者表达区间": "00：20-00：22",
+        "咨询师回应区间": "00：23-00：35",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        1
+      ],
+      "therapist_turn_indexes": [
+        1
+      ]
+    },
+    {
+      "annotation_id": "a48",
+      "segment_id": "a48",
+      "start_ms": 524500,
+      "end_ms": 535250,
+      "client_text": "这也就是我痛苦的根源。因为你这种女生太多了。",
+      "therapist_text": "我这种女生，我这种什么样的女生？你可以但说无妨，我们没有",
+      "raw_labels": {
+        "促进探索": "1",
+        "接纳确认": "0",
+        "共情阻碍": "1",
+        "单元CTE分数": "1",
+        "共情标签依据": "你可以但说无妨、淡化感受、转移话题",
+        "单元CTE分数依据": "回应与来访者当下体验无关",
+        "CTE总评分": "2",
+        "来访者表达区间": "08：45-08：48",
+        "咨询师回应区间": "08：49-08：54",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        2
+      ],
+      "therapist_turn_indexes": [
+        2
+      ]
+    },
+    {
+      "annotation_id": "a49",
+      "segment_id": "a49",
+      "start_ms": 914625,
+      "end_ms": 930250,
+      "client_text": "这样吧，这个需求是两方面的，对吧？一个是当你那个有感觉的时候，这是一种需求，对吧？还有一种就是我觉得我的精力有点少了",
+      "therapist_text": "你的精力太少了",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "0",
+        "单元CTE分数": "2",
+        "共情标签依据": "内容反映：精力太少了",
+        "单元CTE分数依据": "回应只抓住了部分内容，也可能把情绪理解错",
+        "CTE总评分": "2",
+        "来访者表达区间": "15：15-15：27",
+        "咨询师回应区间": "15：29-15：30",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        3,
+        4
+      ],
+      "therapist_turn_indexes": [
+        3
+      ]
+    },
+    {
+      "annotation_id": "a50",
+      "segment_id": "a50",
+      "start_ms": 930417,
+      "end_ms": 946333,
+      "client_text": "一方面是解决那种冲动，一方面就是我感觉那是一种生活，要体验的生活",
+      "therapist_text": "你觉得生活只有那种体验方式吗",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "1",
+        "单元CTE分数": "1",
+        "共情标签依据": "转移话题",
+        "单元CTE分数依据": "回应与来访者当下体验无关",
+        "CTE总评分": "2",
+        "来访者表达区间": "15：32-15：40",
+        "咨询师回应区间": "15：43-15：46",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        5
+      ],
+      "therapist_turn_indexes": [
+        4
+      ]
+    },
+    {
+      "annotation_id": "a123",
+      "segment_id": "a123",
+      "start_ms": 1150832,
+      "end_ms": 1160499,
+      "client_text": "我怎么形容呢，反正有个人能抱在怀里还是蛮开心的",
+      "therapist_text": "被爱，被需要",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "0",
+        "单元CTE分数": "4",
+        "共情标签依据": "情感反映：被爱，被需要",
+        "单元CTE分数依据": "4",
+        "CTE总评分": "2",
+        "来访者表达区间": "19：11-19：17",
+        "咨询师回应区间": "19：18-19：19",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        6
+      ],
+      "therapist_turn_indexes": [
+        5
+      ]
+    },
+    {
+      "annotation_id": "a124",
+      "segment_id": "a124",
+      "start_ms": 1785083,
+      "end_ms": 1791250,
+      "client_text": "反正我现在有点累",
+      "therapist_text": "为啥会累呢？你可别跟我说是因为找不了对象",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "1",
+        "单元CTE分数": "1",
+        "共情标签依据": "评价指责、淡化感受",
+        "单元CTE分数依据": "回应与来访者当下体验无关",
+        "CTE总评分": "2",
+        "来访者表达区间": "29：45-29：46",
+        "咨询师回应区间": "29：47-29：50",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        7
+      ],
+      "therapist_turn_indexes": [
+        6
+      ]
+    },
+    {
+      "annotation_id": "a125",
+      "segment_id": "a125",
+      "start_ms": 2786500,
+      "end_ms": 2789833,
+      "client_text": "好累我操，真的有点累",
+      "therapist_text": "跟我谈话很累",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "0",
+        "单元CTE分数": "2",
+        "共情标签依据": "情感反映：很累",
+        "单元CTE分数依据": "回应只抓住了部分内容，也可能把情绪理解错",
+        "CTE总评分": "2",
+        "来访者表达区间": "46：26-46：28",
+        "咨询师回应区间": "46：28-46：29",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        8
+      ],
+      "therapist_turn_indexes": [
+        7
+      ]
+    },
+    {
+      "annotation_id": "a126",
+      "segment_id": "a126",
+      "start_ms": 2789917,
+      "end_ms": 2820333,
+      "client_text": "不是跟你谈话很累，跟你谈话挺好的，但是它仍然拯救不了我的身躯",
+      "therapist_text": "心理咨询它本来就，你要知道它的局限性，它只是一个跟你敞开心扉，然后让你知道你自己是怎么想的一个过程，最后解决问题的肯定是你。也就是所有的心理咨询，包括我，都是一个尽可能帮你去找到适合你方法的一个过程。解决问题这个有点，可能你对我们的",
+      "raw_labels": {
+        "促进探索": "0",
+        "接纳确认": "0",
+        "共情阻碍": "1",
+        "单元CTE分数": "1",
+        "共情标签依据": "淡化感受、转移话题",
+        "单元CTE分数依据": "回应与来访者当下体验无关",
+        "CTE总评分": "2",
+        "来访者表达区间": "46：30-46：35",
+        "咨询师回应区间": "46：35-46：59",
+        "CTE总评分依据": "回应只抓住了部分内容，也可能把情绪理解错，或把情绪说得过模糊"
+      },
+      "client_turn_indexes": [
+        9
+      ],
+      "therapist_turn_indexes": [
+        8
+      ]
+    }
+  ],
+  "source_file": "C:\\Users\\28187\\Documents\\Ai+心理\\220228.eaf"
+}

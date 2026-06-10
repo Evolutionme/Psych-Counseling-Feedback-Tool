@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>心理咨询 CTE 评估平台</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>心理咨询 CTE 评估平台</h1>
+        <p id="healthText">连接中</p>
+      </div>
+      <button id="refreshButton" type="button">刷新</button>
+    </header>
+
+    <main class="workspace">
+      <section class="panel control-panel">
+        <div class="panel-title">
+          <h2>预测任务</h2>
+          <span id="modelCount">0 个模型</span>
+        </div>
+
+        <form id="predictForm" class="stack">
+          <label class="field">
+            <span>音频文件</span>
+            <input id="audioInput" name="audio" type="file" accept="audio/*,.wav,.mp3,.m4a,.flac" required />
+          </label>
+
+          <div class="diarization-box">
+            <div class="panel-title small">
+              <h2>说话人分离 JSON 生成</h2>
+            </div>
+            <div class="two-cols">
+              <label class="field">
+                <span>分离后端</span>
+                <select id="diarizationBackend">
+                  <option value="funasr">FunASR（本地，推荐）</option>
+                  <option value="pyannote">pyannote</option>
+                  <option value="whisperx">whisperx</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>分离设备</span>
+                <select id="diarizationDevice">
+                  <option value="cpu">CPU</option>
+                  <option value="cuda">CUDA</option>
+                </select>
+              </label>
+            </div>
+            <label class="field">
+              <span>说话人数</span>
+              <input id="diarizationSpeakerCount" type="number" min="1" max="8" step="1" value="2" />
+            </label>
+            <label class="field">
+              <span>HF Token（仅 pyannote 需要）</span>
+              <input id="diarizationToken" type="password" placeholder="可留空" />
+            </label>
+            <div class="speaker-preview-actions">
+              <button id="diarizationButton" type="button">生成说话人分离 JSON</button>
+              <span id="diarizationStatus">生成后会自动用于预测和试听</span>
+            </div>
+            <div id="diarizationDownloads" class="downloads"></div>
+          </div>
+
+          <label class="field">
+            <span>片段模型</span>
+            <select id="segmentModel" name="segment_model_id" required></select>
+          </label>
+
+          <label class="field">
+            <span>整段模型</span>
+            <select id="audioModel" name="audio_model_id"></select>
+          </label>
+
+          <label class="field">
+            <span>说话人分离 JSON</span>
+            <input id="diarizationInput" name="diarization_json" type="file" accept=".json" />
+          </label>
+
+          <div class="speaker-preview-box">
+            <div class="speaker-preview-actions">
+              <button id="speakerPreviewButton" type="button">生成说话人试听</button>
+              <span id="speakerPreviewStatus">上传音频和说话人 JSON 后可生成 speaker 样本</span>
+            </div>
+            <div id="speakerPreviewList" class="speaker-preview-list"></div>
+          </div>
+
+          <div class="two-cols">
+            <label class="field">
+              <span>来访者 speaker</span>
+              <input id="clientSpeaker" name="client_speaker" type="text" placeholder="speaker_1" />
+            </label>
+            <label class="field">
+              <span>咨询师 speaker</span>
+              <input id="therapistSpeaker" name="therapist_speaker" type="text" placeholder="speaker_0" />
+            </label>
+          </div>
+
+          <div class="two-cols">
+            <label class="field">
+              <span>模型设备</span>
+              <select id="device" name="device">
+                <option value="cpu">CPU</option>
+                <option value="cuda">CUDA</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>ASR 设备</span>
+              <select id="asrDevice" name="asr_device">
+                <option value="cpu">CPU</option>
+                <option value="cuda:0">CUDA 0</option>
+              </select>
+            </label>
+          </div>
+
+          <details class="advanced">
+            <summary>ASR 模型配置</summary>
+            <label class="field">
+              <span>ASR 模型</span>
+              <input id="asrModel" name="asr_model" type="text" value="iic/speech_seaco_paraformer_large_asr_nat-zh-cn-16k-common-vocab8404-pytorch" />
+            </label>
+            <label class="field">
+              <span>VAD 模型</span>
+              <input id="vadModel" name="vad_model" type="text" value="iic/speech_fsmn_vad_zh-cn-16k-common-pytorch" />
+            </label>
+            <label class="field">
+              <span>标点模型</span>
+              <input id="puncModel" name="punc_model" type="text" value="iic/punc_ct-transformer_cn-en-common-vocab471067-large" />
+            </label>
+            <label class="field">
+              <span>说话人模型</span>
+              <input id="spkModel" name="spk_model" type="text" value="iic/speech_campplus_sv_zh-cn_16k-common" />
+            </label>
+            <label class="field">
+              <span>模型源</span>
+              <select id="hub" name="hub">
+                <option value="ms">ModelScope</option>
+                <option value="hf">Hugging Face</option>
+              </select>
+            </label>
+          </details>
+
+          <div class="two-cols">
+            <label class="field">
+              <span>首位说话人</span>
+              <select id="firstRole" name="first_speaker_role">
+                <option value="client">来访者</option>
+                <option value="therapist">咨询师</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>标签阈值</span>
+              <input id="threshold" name="threshold" type="number" min="0" max="1" step="0.05" value="0.5" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>热词</span>
+            <input id="hotword" name="hotword" type="text" placeholder="可留空" />
+          </label>
+
+          <label class="check-row">
+            <input id="runAcoustics" name="run_acoustics" type="checkbox" />
+            <span>同时导出咨询师声学特征</span>
+          </label>
+
+          <button id="submitButton" class="primary" type="submit">开始预测</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <form id="modelUploadForm" class="stack compact">
+          <div class="panel-title small">
+            <h2>模型导入</h2>
+          </div>
+          <label class="field">
+            <span>模型文件</span>
+            <input id="modelFile" name="model" type="file" accept=".pt,.pth,.bin" required />
+          </label>
+          <button type="submit">导入模型</button>
+        </form>
+      </section>
+
+      <section class="content">
+        <div class="panel status-panel">
+          <div class="panel-title">
+            <h2>任务状态</h2>
+            <span id="jobStatus">暂无任务</span>
+          </div>
+          <div id="jobMessage" class="message">等待提交</div>
+          <div id="failureReason" class="failure-box"></div>
+          <div id="downloadLinks" class="downloads"></div>
+        </div>
+
+        <div class="panel log-panel">
+          <div class="panel-title">
+            <h2>实时日志</h2>
+            <span id="logMeta">0 行</span>
+          </div>
+          <pre id="jobLog" class="log-box">等待任务启动后显示实时日志。</pre>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="panel-title">
+            <h2>结果概览</h2>
+            <span id="summaryText">未生成</span>
+          </div>
+          <div id="summaryGrid" class="summary-grid"></div>
+          <div id="overallFeedback" class="overall-feedback" hidden></div>
+        </div>
+
+        <div class="panel table-panel">
+          <div class="panel-title">
+            <h2>片段预览</h2>
+            <span id="rowCount">0 行</span>
+          </div>
+          <div class="table-wrap">
+            <table id="segmentTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel table-panel">
+          <div class="panel-title">
+            <h2>声学特征预览</h2>
+            <span id="acousticRowCount">0 行</span>
+          </div>
+          <div id="acousticEmpty" class="empty-note">未生成声学特征。请勾选“同时导出咨询师声学特征”，并填写咨询师 speaker。</div>
+          <div class="table-wrap acoustic-wrap">
+            <table id="acousticTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel jobs-panel">
+          <div class="panel-title">
+            <h2>历史任务</h2>
+            <span id="jobCount">0 个</span>
+          </div>
+          <div id="jobList" class="job-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/assets/app.js?v=20260608-overall-feedback"></script>
+  </body>
+</html>
