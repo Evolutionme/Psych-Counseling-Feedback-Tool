@@ -160,8 +160,69 @@ def load_job(job_id):
     return job
 
 
+EMPATHY_SUMMARY_LABELS = {
+    "emotion_reflection": "内容情感反映",
+    "deep_meaning_understanding": "深层意义理解",
+    "acceptance_confirmation": "接纳确认",
+    "exploration_facilitation": "促进探索",
+    "blocking_present": "共情阻碍",
+}
+
+
+def summarize_empathy_labels_for_preview(data, threshold=0.5):
+    segments = data.get("segments", []) if isinstance(data, dict) else []
+    sums = {key: 0.0 for key in EMPATHY_SUMMARY_LABELS}
+    counts = {key: 0 for key in EMPATHY_SUMMARY_LABELS}
+
+    for unit in segments:
+        empathy = ((unit.get("prediction", {}) or {}).get("empathy", {}) or {})
+        for key, label in EMPATHY_SUMMARY_LABELS.items():
+            item = empathy.get(label, {})
+            if not isinstance(item, dict):
+                continue
+            prob = item.get("prob")
+            if prob is None:
+                continue
+            try:
+                prob = float(prob)
+            except (TypeError, ValueError):
+                continue
+            sums[key] += prob
+            counts[key] += 1
+
+    summary = {}
+    for key, label in EMPATHY_SUMMARY_LABELS.items():
+        avg_prob = sums[key] / counts[key] if counts[key] else None
+        present = bool(avg_prob is not None and avg_prob > threshold)
+        if key == "blocking_present":
+            status = "存在明显阻碍" if present else "未见明显阻碍"
+        else:
+            status = "已体现" if present else "未明显体现"
+        summary[key] = {
+            "label": label,
+            "average_prob": round(float(avg_prob), 4) if avg_prob is not None else None,
+            "count": counts[key],
+            "threshold": float(threshold),
+            "status": status,
+            "present": present,
+        }
+    return summary
+
+
+def ensure_preview_summary(job):
+    files = job.get("files", {}) or {}
+    prediction_json = files.get("json")
+    if not prediction_json or not Path(prediction_json).exists():
+        return job
+    preview = dict(job.get("preview", {}) or {})
+    preview["summary"] = read_json_summary(prediction_json)
+    job = dict(job)
+    job["preview"] = preview
+    return job
+
+
 def public_job(job):
-    data = dict(job)
+    data = ensure_preview_summary(job)
     data.pop("command", None)
     data["downloads"] = {}
     for key, path in job.get("files", {}).items():
@@ -333,12 +394,23 @@ def read_json_summary(path):
         return {}
     with open(path, "r", encoding="utf-8-sig") as f:
         data = json.load(f)
+    analysis_summary = data.get("analysis_summary", {}) or {}
+    audio_summary = data.get("audio_summary", {}) or {}
+    empathy_label_summary = (
+        audio_summary.get("empathy_label_summary")
+        or analysis_summary.get("empathy_label_summary")
+        or summarize_empathy_labels_for_preview(data)
+    )
+    analysis_summary = dict(analysis_summary)
+    audio_summary = dict(audio_summary)
+    analysis_summary["empathy_label_summary"] = empathy_label_summary
+    audio_summary["empathy_label_summary"] = empathy_label_summary
     return {
         "audio_id": data.get("audio_id", ""),
         "role_map": data.get("role_map", {}),
-        "analysis_summary": data.get("analysis_summary", {}),
+        "analysis_summary": analysis_summary,
         "audio_prediction": data.get("audio_prediction", {}),
-        "audio_summary": data.get("audio_summary", {}),
+        "audio_summary": audio_summary,
     }
 
 
@@ -1500,6 +1572,20 @@ def create_prediction_job(
 @app.get("/api/jobs/{job_id}")
 def get_job(job_id: str):
     return public_job(JOBS.get(job_id) or load_job(job_id))
+
+
+@app.delete("/api/jobs/{job_id}")
+def delete_job(job_id: str):
+    job = JOBS.get(job_id) or load_job(job_id)
+    if job.get("status") in ("queued", "running"):
+        raise HTTPException(status_code=409, detail="Cannot delete a running job")
+    folder = job_path(job_id).resolve()
+    if not is_under(folder, JOB_DIR):
+        raise HTTPException(status_code=400, detail="Invalid job id")
+    if folder.exists():
+        shutil.rmtree(folder)
+    JOBS.pop(job_id, None)
+    return {"ok": True, "id": job_id}
 
 
 @app.get("/api/jobs/{job_id}/log")

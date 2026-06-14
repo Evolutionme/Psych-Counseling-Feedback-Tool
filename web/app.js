@@ -408,6 +408,7 @@ function renderSummary(preview) {
 
 function renderTable(rows) {
   const table = $("segmentTable");
+  if (!table) return;
   const thead = table.querySelector("thead");
   const tbody = table.querySelector("tbody");
   thead.innerHTML = "";
@@ -578,7 +579,6 @@ function renderJob(job) {
   setText("jobMessage", job.message || "");
   renderDownloads(job);
   renderSummary(job.preview || {});
-  renderTable(job.preview?.segments || []);
   renderAcousticTable(job.preview?.acoustics || []);
   if (job.status === "failed" && job.failure_reason) {
     const failureBox = $("failureReason");
@@ -613,7 +613,31 @@ function renderJobs() {
       await loadJobLog(job.id);
     });
 
-    item.append(main, button);
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "danger";
+    deleteButton.textContent = "删除";
+    deleteButton.disabled = job.status === "running" || job.status === "queued";
+    deleteButton.addEventListener("click", async () => {
+      if (!confirm("确定删除这个历史任务吗？")) return;
+      await api(`/api/jobs/${job.id}`, { method: "DELETE" });
+      if (state.activeJobId === job.id) {
+        state.activeJobId = "";
+        setText("jobStatus", "暂无任务");
+        setText("jobMessage", "等待提交");
+        renderDownloads({});
+        renderSummary({});
+        renderLog(null);
+        renderAcousticTable([]);
+      }
+      await loadJobs();
+    });
+
+    const actions = document.createElement("div");
+    actions.className = "job-actions";
+    actions.append(button, deleteButton);
+
+    item.append(main, actions);
     list.appendChild(item);
   });
 }

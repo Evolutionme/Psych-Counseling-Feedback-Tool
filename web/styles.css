@@ -461,6 +461,21 @@ td {
   min-height: 32px;
 }
 
+.job-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.job-actions .danger {
+  border-color: rgba(164, 60, 72, 0.35);
+  color: var(--fail);
+}
+
+.job-actions .danger:hover {
+  border-color: var(--fail);
+}
+
 .job-main {
   min-width: 0;
 }
