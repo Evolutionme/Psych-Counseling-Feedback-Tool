@@ -620,17 +620,23 @@ function renderJobs() {
     deleteButton.disabled = job.status === "running" || job.status === "queued";
     deleteButton.addEventListener("click", async () => {
       if (!confirm("确定删除这个历史任务吗？")) return;
-      await api(`/api/jobs/${job.id}`, { method: "DELETE" });
-      if (state.activeJobId === job.id) {
-        state.activeJobId = "";
-        setText("jobStatus", "暂无任务");
-        setText("jobMessage", "等待提交");
-        renderDownloads({});
-        renderSummary({});
-        renderLog(null);
-        renderAcousticTable([]);
+      deleteButton.disabled = true;
+      try {
+        await api(`/api/jobs/${job.id}`, { method: "DELETE" });
+        if (state.activeJobId === job.id) {
+          state.activeJobId = "";
+          setText("jobStatus", "暂无任务");
+          setText("jobMessage", "等待提交");
+          renderDownloads({});
+          renderSummary({});
+          renderLog(null);
+          renderAcousticTable([]);
+        }
+        await loadJobs();
+      } catch (error) {
+        setText("jobMessage", `删除失败：${error.message}`);
+        deleteButton.disabled = false;
       }
-      await loadJobs();
     });
 
     const actions = document.createElement("div");

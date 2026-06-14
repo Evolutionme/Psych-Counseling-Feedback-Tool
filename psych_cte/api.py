@@ -154,10 +154,18 @@ def load_job(job_id):
     path = job_path(job_id) / "job.json"
     if not path.exists():
         raise HTTPException(status_code=404, detail="Job not found")
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8-sig") as f:
         job = json.load(f)
     JOBS[job_id] = job
     return job
+
+
+def remove_readonly(func, path, _exc_info):
+    try:
+        os.chmod(path, 0o700)
+        func(path)
+    except Exception:
+        raise
 
 
 EMPATHY_SUMMARY_LABELS = {
@@ -1478,7 +1486,11 @@ def list_jobs():
             load_job(meta.parent.name)
         except Exception:
             pass
-    jobs = sorted(JOBS.values(), key=lambda item: item.get("created_at", 0), reverse=True)
+    jobs = [
+        job for job in JOBS.values()
+        if job.get("status") != "deleted" and not job.get("deleted_at")
+    ]
+    jobs = sorted(jobs, key=lambda item: item.get("created_at", 0), reverse=True)
     return {"jobs": [public_job(job) for job in jobs]}
 
 
@@ -1583,7 +1595,14 @@ def delete_job(job_id: str):
     if not is_under(folder, JOB_DIR):
         raise HTTPException(status_code=400, detail="Invalid job id")
     if folder.exists():
-        shutil.rmtree(folder)
+        try:
+            shutil.rmtree(folder, onerror=remove_readonly)
+        except PermissionError:
+            job["status"] = "deleted"
+            job["message"] = "历史任务已从列表移除，部分文件被系统锁定，稍后可手动清理。"
+            job["deleted_at"] = time.time()
+            save_job(job)
+            return {"ok": True, "id": job_id, "soft_deleted": True}
     JOBS.pop(job_id, None)
     return {"ok": True, "id": job_id}
 
