@@ -381,6 +381,12 @@ button:disabled {
   font-weight: 650;
 }
 
+.overall-feedback h4 {
+  margin: 8px 0 4px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
 .overall-feedback p {
   margin: 0;
   color: #24313a;

@@ -258,6 +258,10 @@ function firstFilled(...values) {
   return values.find((value) => value !== undefined && value !== null && value !== "");
 }
 
+function empathyLabelStatus(summary, key) {
+  return summary?.[key]?.status || "";
+}
+
 function empathyLevelFromCte(score) {
   const value = Number(score);
   if (!Number.isFinite(value)) return "";
@@ -293,7 +297,43 @@ function overallFeedbackFromCte(score) {
   };
 }
 
-function renderOverallFeedback(score) {
+function labelAdviceItems(labelSummary) {
+  const items = [];
+  const emotionReflected = Boolean(labelSummary?.emotion_reflection?.present);
+  items.push({
+    title: "内容及情感反映",
+    text: emotionReflected
+      ? "已体现。你的回应能够抓住来访者表达中的主要内容或情绪，使来访者较容易感到自己被听见"
+      : "未明显体现。你的回应对来访者核心情绪或主要体验的反映不足，建议下一次先识别来访者最突出的感受，并用简洁语言回应出来。",
+  });
+
+  const acceptanceReflected = Boolean(labelSummary?.acceptance_confirmation?.present);
+  items.push({
+    title: "接纳确认",
+    text: acceptanceReflected
+      ? "已体现。你的回应能够在一定程度上表达对来访者感受的理解和接纳，有助于降低来访者的防御感。"
+      : "未明显体现。你的回应较少体现对来访者感受的确认和接纳，建议下一次加入类似“在这样的情况下你会这样感受是可以理解的”等验证性表达。",
+  });
+
+  const explorationReflected = Boolean(labelSummary?.exploration_facilitation?.present);
+  items.push({
+    title: "促进探索",
+    text: explorationReflected
+      ? "已体现。你的回应能够帮助来访者进一步停留在自己的体验中，或引导其继续表达尚未完全说清的感受和意义。"
+      : "未明显体现。你的回应主要停留在已有内容上，较少推动来访者进一步探索。建议下一次在反映情绪后，使用开放式问题，如“这对你来说最难的部分是什么？”“当时你心里最强烈的感受是什么？”。",
+  });
+
+  const blockingReflected = Boolean(labelSummary?.blocking_present?.present);
+  items.push({
+    title: "共情阻碍",
+    text: blockingReflected
+      ? "存在明显阻碍。你的回应中可能出现了过早建议、评价、泛泛安慰或转移焦点等表达，使来访者的情绪尚未被充分理解时就被带向解决问题。建议下一次先停留在理解和反映阶段，再考虑是否需要提出建议。"
+      : "未见明显阻碍。你的回应中暂未发现明显削弱共情传达的表达方式。",
+  });
+  return items;
+}
+
+function renderOverallFeedback(score, labelSummary) {
   const box = $("overallFeedback");
   if (!box) return;
   const feedback = overallFeedbackFromCte(score);
@@ -317,7 +357,20 @@ function renderOverallFeedback(score) {
   suggestionText.textContent = feedback.suggestion;
   suggestionBlock.append(suggestionTitle, suggestionText);
 
+  const labelAdviceBlock = document.createElement("div");
+  const labelAdviceTitle = document.createElement("h3");
+  labelAdviceTitle.textContent = "标签建议";
+  labelAdviceBlock.appendChild(labelAdviceTitle);
+  labelAdviceItems(labelSummary).forEach((item) => {
+    const itemTitle = document.createElement("h4");
+    const itemText = document.createElement("p");
+    itemTitle.textContent = item.title;
+    itemText.textContent = item.text;
+    labelAdviceBlock.append(itemTitle, itemText);
+  });
+
   box.append(feedbackBlock, suggestionBlock);
+  box.appendChild(labelAdviceBlock);
   box.hidden = false;
 }
 
@@ -329,6 +382,7 @@ function renderSummary(preview) {
   const audioPrediction = summary.audio_prediction || {};
   const audioSummary = summary.audio_summary || {};
   const roleMap = summary.role_map || {};
+  const labelSummary = audioSummary.empathy_label_summary || analysis.empathy_label_summary || {};
   const audioCteScore = firstFilled(audioPrediction.audio_cte_score, audioSummary.audio_cte_score, analysis.audio_cte_score);
 
   grid.append(
@@ -340,11 +394,16 @@ function renderSummary(preview) {
     metric("整段 CTE", audioCteScore),
     metric("共情等级", empathyLevelFromCte(audioCteScore)),
     metric("来访者映射", Object.entries(roleMap).find(([, value]) => value === "client")?.[0] || ""),
-    metric("咨询师映射", Object.entries(roleMap).find(([, value]) => value === "therapist")?.[0] || "")
+    metric("咨询师映射", Object.entries(roleMap).find(([, value]) => value === "therapist")?.[0] || ""),
+    metric("内容及情感反映", empathyLabelStatus(labelSummary, "emotion_reflection")),
+    metric("深层意义理解", empathyLabelStatus(labelSummary, "deep_meaning_understanding")),
+    metric("接纳确认", empathyLabelStatus(labelSummary, "acceptance_confirmation")),
+    metric("促进探索", empathyLabelStatus(labelSummary, "exploration_facilitation")),
+    metric("共情阻碍", empathyLabelStatus(labelSummary, "blocking_present"))
   );
 
   setText("summaryText", summary.audio_id ? "已生成" : "未生成");
-  renderOverallFeedback(audioCteScore);
+  renderOverallFeedback(audioCteScore, labelSummary);
 }
 
 function renderTable(rows) {

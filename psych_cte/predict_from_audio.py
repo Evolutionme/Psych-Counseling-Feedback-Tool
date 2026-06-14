@@ -732,6 +732,55 @@ def collect_local_cte_scores(record):
     return scores, items
 
 
+def summarize_empathy_labels(record, threshold=0.5):
+    sums = {name: 0.0 for name in EMPATHY_LABELS}
+    counts = {name: 0 for name in EMPATHY_LABELS}
+
+    for unit in record.get("segments", []):
+        empathy = (unit.get("prediction", {}) or {}).get("empathy", {}) or {}
+        for name in EMPATHY_LABELS:
+            cn_name = EMPATHY_CN[name]
+            item = empathy.get(cn_name, {})
+            if not isinstance(item, dict):
+                continue
+            prob = item.get("prob")
+            if prob is None:
+                continue
+            try:
+                prob = float(prob)
+            except (TypeError, ValueError):
+                continue
+            sums[name] += prob
+            counts[name] += 1
+
+    labels = {}
+    for name in EMPATHY_LABELS:
+        avg_prob = None
+        if counts[name]:
+            avg_prob = sums[name] / counts[name]
+        if name == "blocking_present":
+            status = (
+                "存在明显阻碍"
+                if avg_prob is not None and avg_prob > threshold
+                else "未见明显阻碍"
+            )
+        else:
+            status = (
+                "已体现"
+                if avg_prob is not None and avg_prob > threshold
+                else "未明显体现"
+            )
+        labels[name] = {
+            "label": EMPATHY_CN[name],
+            "average_prob": round(float(avg_prob), 4) if avg_prob is not None else None,
+            "count": counts[name],
+            "threshold": float(threshold),
+            "status": status,
+            "present": bool(avg_prob is not None and avg_prob > threshold),
+        }
+    return labels
+
+
 def summarize_local_cte_scores(record):
     scores, items = collect_local_cte_scores(record)
     if not scores:
@@ -770,6 +819,7 @@ def summarize_local_cte_scores(record):
 def build_audio_summary(record):
     audio_prediction = record.get("audio_prediction", {}) or {}
     local_summary = summarize_local_cte_scores(record)
+    empathy_label_summary = summarize_empathy_labels(record)
     local_items = local_summary.get("items", [])
     local_scores = local_summary.get("scores", [])
 
@@ -851,6 +901,7 @@ def build_audio_summary(record):
         "local_cte_scores": local_scores,
         "local_cte_items": local_items,
         "local_cte_summary": local_summary,
+        "empathy_label_summary": empathy_label_summary,
         "audio_cte_rationale": rationale,
         "top_weighted_segments": top_units,
     }
@@ -865,6 +916,7 @@ def enrich_record_with_summary(record):
             "local_cte_summary": summary["local_cte_summary"],
             "audio_cte_score": summary["audio_cte_score"],
             "audio_cte_rationale": summary["audio_cte_rationale"],
+            "empathy_label_summary": summary["empathy_label_summary"],
             "top_weighted_segments": summary["top_weighted_segments"],
         }
     )
